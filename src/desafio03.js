@@ -6,18 +6,13 @@ class hero {
     }
 
     atacar(ataque) {
-        if (ataque != "") {
+        if (ataque != "" && ataque != undefined) {
             console.log(`Nome: ${this.name} \n O ${this.tipo} atacou usando ${ataque} \n `)
         } else {
             console.log(`O ${this.name} \n TIPO: ${this.tipo} \n ATAQUE: INDEFINIDO \n`)
         }
     }
 }
-
-let hero1 = new hero("magno", 28, "mago")
-hero1.atacar(returnAtaque(hero1.tipo))
-
-
 
 let listHerois = {
     0: ["Merlin", 40, "mago"],
@@ -26,8 +21,14 @@ let listHerois = {
     3: ["Rock lee", 34, "monge"]
 }
 
-let a = returnAtaque("d")
-console.log("aa", a)
+for (let index in listHerois) {
+    let herois = new hero(listHerois[index][0], listHerois[index][1], listHerois[index][2]);
+    let ataque = listHerois[index][2];
+    herois.atacar(returnAtaque(ataque));
+    //console.log("index",listHerois[index][2])
+}
+//let a = returnAtaque("d")
+//console.log("aa", a)
 
 function returnAtaque(ataque) {
     let ataqueHeroi = ""
@@ -45,8 +46,4 @@ function returnAtaque(ataque) {
 
     return ataqueHeroi;
 
-    /* se mago -> no ataque exibir (usou magia)
-se guerreiro -> no ataque exibir (usou espada)
-se monge -> no ataque exibir (usou artes marciais)
-se ninja -> no ataque exibir (usou shuriken) */
 }
