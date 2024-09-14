@@ -18,7 +18,10 @@ let listHerois = {
     0: ["Merlin", 40, "mago"],
     1: ["Meliodas", 38, "guerreiro"],
     2: ["Sasuki", 28, "ninja"],
-    3: ["Rock lee", 34, "monge"]
+    3: ["Rock lee", 34, "monge"],
+    4:["Mestre dos Magos",80,"mago"],
+    5:["Saitama",30,"Super Forca"]
+    
 }
 
 for (let index in listHerois) {
